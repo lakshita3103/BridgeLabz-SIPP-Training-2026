@@ -1,3 +1,9 @@
+/*Ravi just joined a coding guild. Store his name, age, rank, salary, and
+membership fee (float) using correct data types. Compute his
+annual bonus (12% of salary), cast it to int, and print a formatted
+welcome card. */
+
+
 import java.util.Scanner;
 
 public class welcomeCard {
@@ -10,6 +16,7 @@ public class welcomeCard {
     int annual;
 
     void show() {
+        System.out.println("\n===== WELCOME CARD =====");
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("Rank: " + rank);
@@ -18,34 +25,34 @@ public class welcomeCard {
         System.out.println("12% of Salary: " + annual);
     }
 
-    public void calculateAnnual() {
-        annual = (int)(salary * 12 / 100);
+    void calculateAnnual() {
+        annual = (int) (salary * 12 / 100);
     }
 
-    void input(){
+    void input() {
         Scanner sc = new Scanner(System.in);
-        welcomeCard obj = new welcomeCard();
 
         System.out.print("Enter Name: ");
-        obj.name = sc.nextLine();
+        name = sc.nextLine();
 
         System.out.print("Enter Age: ");
-        obj.age = sc.nextInt();
+        age = sc.nextInt();
 
         System.out.print("Enter Rank: ");
-        obj.rank = sc.nextInt();
+        rank = sc.nextInt();
 
         System.out.print("Enter Salary: ");
-        obj.salary = sc.nextLong();
+        salary = sc.nextLong();
 
         System.out.print("Enter Fee: ");
-        obj.fee = sc.nextFloat();
+        fee = sc.nextFloat();
+
         sc.close();
     }
-    
 
     public static void main(String[] args) {
         welcomeCard obj = new welcomeCard();
+
         obj.input();
         obj.calculateAnnual();
         obj.show();
