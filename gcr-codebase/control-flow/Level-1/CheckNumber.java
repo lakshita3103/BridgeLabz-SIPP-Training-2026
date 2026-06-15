@@ -12,7 +12,7 @@ public class CheckNumber {
             System.out.println("Zero.");
         }
         else{
-            System.out.println("Negative.");
+            System.out.println("Negative.   ");
         }
         sc.close();
     }
