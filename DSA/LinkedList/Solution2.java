@@ -1,0 +1,36 @@
+package DSA.LinkedList;
+
+class Node {
+    int val;
+    Node next;
+
+    Node(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+class Solution {
+
+    public static Node removeTask(Node head, int taskId) {
+
+        if (head == null)
+            return null;
+
+        if (head.val == taskId)
+            return head.next;
+
+        Node prev = head;
+        Node curr = head.next;
+
+        while (curr != null && curr.val != taskId) {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        if (curr != null) {
+            prev.next = curr.next;
+        }
+
+        return head;
+    }
+}
